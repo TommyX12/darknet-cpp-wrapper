@@ -14,13 +14,13 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 
 3. Remove or rename the main function in the darknet source code. <br/>
 	There is a main function in the original darknet. In order to use it as a library, this function must be removed or renamed. For example, rename this function to _main instead of main. <br/>
-	The function is located in [src/darknet.c].
+	The function is located in `src/darknet.c`.
 
-4. Copy the content inside [wrapper] folder to somewhere near the source file. <br/>
+4. Copy the content inside `wrapper` folder to somewhere near the source file. <br/>
 	This location will need to be manually added to the make file in later steps.
 	
-5. Add your own C++ file in the same location, include [darknet.h], and use the [Darknet] class. <br/>
-	See [example/main.cpp] for example usage.
+5. Add your own C++ file in the same location, include `darknet.h`, and use the `Darknet` class. <br/>
+	See `example/main.cpp` for example usage.
 
 6. Add your source code / folder to the make file manually. <br/>
 	Make sure to use g++ instead of gcc for compiling the .cpp files.
@@ -32,18 +32,18 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 ### Methods:
 * static Darknet* get_current() <br/>
 	Returns the current instance of darknet. <br/>
-	Returns [nullptr] if none are instantiated.
+	Returns `nullptr` if none are instantiated.
 	
 * Darknet() <br/>
 	Default constructor. <br/>
-	The [initialize] method must be called before darknet is used. <br/>
+	The `initialize` method must be called before darknet is used. <br/>
 	Note: Only one instance can be constructed.
 	
 * ~Darknet() <br/>
 	Default destructor.
 
 * void initialize(int gpu_id = 0) <br/>
-	Initializes darknet with the given [gpu_id]. <br/>
+	Initializes darknet with the given `gpu_id`. <br/>
 	This method cannot be called more than once.
 	
 	Parameters:
@@ -63,17 +63,17 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 		list of arguments in the form of an array of C-style strings.
 
 * void load_command_args(const std::vector<std::string>& args) <br/>
-	This is an overloaded method. Instead of using C-style command arguments, this method parses a [std::vector] list of C++ strings for convenience.
+	This is an overloaded method. Instead of using C-style command arguments, this method parses a `std::vector` list of C++ strings for convenience.
 
 * void run() <br/>
 	Runs the darknet application using the object properties as parameters. <br/>
-	Depending on the [operation] property, the behavior of this method may vary. <br/>
+	Depending on the `operation` property, the behavior of this method may vary. <br/>
 	This method cannot be called more than once.
 
 * void process(cv::Mat& image, process_func_ptr process_func = nullptr) <br/>
-	If [module] is set to "detector" and [operation] is set to "detect", calling this function will process [image] by detecting objects using darknet's neural network and calling [process_func] with the detected data, including object names, positions and bounding boxes, and confidences (probabilities). <br/>
-	If [module] and [operation] is in other configurations, this method has no effect. <br/>
-	[run] must be called before this method.
+	If `module` is set to "detector" and `operation` is set to "detect", calling this function will process `image` by detecting objects using darknet's neural network and calling `process_func` with the detected data, including object names, positions and bounding boxes, and confidences (probabilities). <br/>
+	If `module` and `operation` is in other configurations, this method has no effect. <br/>
+	`run` must be called before this method.
 	
 	Parameters:
 	* cv::Mat& image <br/>
@@ -93,7 +93,7 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 		
 		* box* boxes <br/>
 			Bounding boxes of the object detected. <br/>
-			[box] is a struct with 4 properties:
+			`box` is a struct with 4 properties:
 			* x: x coordinate of the center.
 			* y: y coordinate of the center.
 			* w: width of the bounding box.
@@ -160,4 +160,4 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 	(Unknown)
 
 ### Example:
-See [example.cpp].
+See `example.cpp`.
