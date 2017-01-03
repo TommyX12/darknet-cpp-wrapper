@@ -2,30 +2,30 @@
 A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT project.
 
 # Installation:
-1. Download and make sure you can compile and run darknet yolo. <br/>
+1.** Download and make sure you can compile and run darknet yolo. <br/>**
 	Links: <br/>
 		http://pjreddie.com/darknet/yolo/ <br/>
 		https://github.com/pjreddie/darknet
 	
 	Note: OpenCV and GPU(CUDA) must be enabled when compiling. <br/>
 	
-2. Make a copy of the darknet source code, including the make file. <br/>
+2.** Make a copy of the darknet source code, including the make file. <br/>**
 	The following steps are performed on this copy, unless stated otherwise.
 
-3. Remove or rename the main function in the darknet source code. <br/>
+3.** Remove or rename the main function in the darknet source code. <br/>**
 	There is a main function in the original darknet. In order to use it as a library, this function must be removed or renamed. For example, rename this function to _main instead of main. <br/>
 	The function is located in `src/darknet.c`.
 
-4. Copy the content inside `wrapper` folder to somewhere near the source file. <br/>
+4.** Copy the content inside `wrapper` folder to somewhere near the source file. <br/>**
 	This location will need to be manually added to the make file in later steps.
 	
-5. Add your own C++ file in the same location, include `darknet.h`, and use the `Darknet` class. <br/>
+5.** Add your own C++ file in the same location, include `darknet.h`, and use the `Darknet` class. <br/>**
 	See `example/main.cpp` for example usage.
 
-6. Add your source code / folder to the make file manually. <br/>
+6.** Add your source code / folder to the make file manually. <br/>**
 	Make sure to use g++ instead of gcc for compiling the .cpp files.
 	
-7. Compile and run!
+7.** Compile and run!**
 
 # Reference:
 ## Darknet class
@@ -85,78 +85,78 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 			void process_func(int num, const char** names, box* boxes, float* probs)
 		
 		Parameters:
-		* int num <br/>
+		* **int num <br/>**
 			Number of objects detected.
 			
-		* const char** names <br/>
+		* **const char\*\* names <br/>**
 			Names of the objects detected.
 		
-		* box* boxes <br/>
+		* **box\* boxes <br/>**
 			Bounding boxes of the object detected. <br/>
 			`box` is a struct with 4 properties:
-			* x: x coordinate of the center.
-			* y: y coordinate of the center.
-			* w: width of the bounding box.
-			* h: height of the bounding box.
+			* **x: x coordinate of the center.**
+			* **y: y coordinate of the center.**
+			* **w: width of the bounding box.**
+			* **h: height of the bounding box.**
 			
 			All properties are in the range of 0.0 to 1.0, where 1.0 is the full width/height of the image.
 		
-		* float* probs <br/>
+		* **float* probs <br/>**
 			The confidence/probability of the objects detected.
 	
 ### Properties:
-* std::string module <br/>
+* **std::string module <br/>**
 	The darknet module/option to use. <br/>
 	Corresponds to the first argument in darknet command. <br/>
 	Valid values:
-	* "detector"
+	* **"detector"**
 	
-* std::string operation <br/>
+* **std::string operation <br/>**
 	The detector operation to use.  <br/>
 	Corresponds to the second argument in darknet command. <br/>
 	Valid values:
-	* "detect"
-	* "test"
-	* "train"
-	* "valid"
-	* "recall"
+	* **"detect"**
+	* **"test"**
+	* **"train"**
+	* **"valid"**
+	* **"recall"**
 
-* std::string datacfg <br/>
+* **std::string datacfg <br/>**
 	The path to the data config file. <br/>
 	Example: "cfg/coco.data"
 	
-* std::string cfg <br/>
+* **std::string cfg <br/>**
 	The path to the neural network config file. <br/>
 	Example: "cfg/yolo.cfg"
 
-* std::string weights <br/>
+* **std::string weights <br/>**
 	The path to the trained weights file. <br/>
 	Example: "yolo.weights"
 
-* std::string prefix <br/>
+* **std::string prefix <br/>**
 	If this property is not an empty string, visualization of each frame processed will be saved to hard drive, with this property being the prefix for the name of the files. <br/>
 	(Untested)
 
-* float thresh <br/>
+* **float thresh <br/>**
 	The confidence threshold for detection. Any detected objects with confidence (probably) lower than this property will be discarded.  <br/>
 	Default: 0.24.
 
-* int frame_skip <br/>
+* **int frame_skip <br/>**
 	(Unknown)
 
-* bool visualize <br/>
+* **bool visualize <br/>**
 	If true, a window will be opened that shows detected objects in each frame processed.
 
-* bool multithread <br/>
+* **bool multithread <br/>**
 	If true, multi-threading will be used to improve performance. <br/>
 	Note: this will make each process call processes the second last image passed in. <br/>
 	(Experimental)
 
-* std::string gpu_list <br/>
+* **std::string gpu_list <br/>**
 	A list of GPUs to use in computation. Separate the GPU indexes with commas. <br/>
 	(Untested)
 
-* bool clear <br/>
+* **bool clear <br/>**
 	(Unknown)
 
 ### Example:
