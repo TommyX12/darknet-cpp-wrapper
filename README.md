@@ -27,6 +27,8 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 	
 7. **Compile and run!**
 
+8. **To train the network, use the original darknet application.**
+
 # Reference:
 ## Darknet class
 ### Methods:
