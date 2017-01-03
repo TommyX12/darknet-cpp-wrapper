@@ -107,9 +107,9 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 ### Properties:
 * std::string module <br/>
 	The darknet module/option to use. <br/>
+	Corresponds to the first argument in darknet command.
 	Valid values:
 	* "detector"
-	Corresponds to the first argument in darknet command.
 	
 * std::string operation <br/>
 	The detector operation to use.  <br/>
