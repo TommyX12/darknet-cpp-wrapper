@@ -2,30 +2,30 @@
 A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT project.
 
 # Installation:
-1.** Download and make sure you can compile and run darknet yolo. <br/>**
+1. ** Download and make sure you can compile and run darknet yolo. <br/>**
 	Links: <br/>
 		http://pjreddie.com/darknet/yolo/ <br/>
 		https://github.com/pjreddie/darknet
 	
 	Note: OpenCV and GPU(CUDA) must be enabled when compiling. <br/>
 	
-2.** Make a copy of the darknet source code, including the make file. <br/>**
+2. ** Make a copy of the darknet source code, including the make file. <br/>**
 	The following steps are performed on this copy, unless stated otherwise.
 
-3.** Remove or rename the main function in the darknet source code. <br/>**
+3. ** Remove or rename the main function in the darknet source code. <br/>**
 	There is a main function in the original darknet. In order to use it as a library, this function must be removed or renamed. For example, rename this function to _main instead of main. <br/>
 	The function is located in `src/darknet.c`.
 
-4.** Copy the content inside `wrapper` folder to somewhere near the source file. <br/>**
+4. ** Copy the content inside `wrapper` folder to somewhere near the source file. <br/>**
 	This location will need to be manually added to the make file in later steps.
 	
-5.** Add your own C++ file in the same location, include `darknet.h`, and use the `Darknet` class. <br/>**
+5. ** Add your own C++ file in the same location, include `darknet.h`, and use the `Darknet` class. <br/>**
 	See `example/main.cpp` for example usage.
 
-6.** Add your source code / folder to the make file manually. <br/>**
+6. ** Add your source code / folder to the make file manually. <br/>**
 	Make sure to use g++ instead of gcc for compiling the .cpp files.
 	
-7.** Compile and run!**
+7. ** Compile and run!**
 
 # Reference:
 ## Darknet class
