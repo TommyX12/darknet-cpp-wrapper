@@ -30,56 +30,56 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 # Reference:
 ## Darknet class
 ### Methods:
-* static Darknet* get_current() <br/>
+* **static Darknet\* get_current() <br/>**
 	Returns the current instance of darknet. <br/>
 	Returns `nullptr` if none are instantiated.
 	
-* Darknet() <br/>
+* **Darknet() <br/>**
 	Default constructor. <br/>
 	The `initialize` method must be called before darknet is used. <br/>
 	Note: Only one instance can be constructed.
 	
-* ~Darknet() <br/>
+* **~Darknet() <br/>**
 	Default destructor.
 
-* void initialize(int gpu_id = 0) <br/>
+* **void initialize(int gpu_id = 0) <br/>**
 	Initializes darknet with the given `gpu_id`. <br/>
 	This method cannot be called more than once.
 	
 	Parameters:
-	* int gpu_id <br/>
+	* **int gpu_id <br/>**
 		The default GPU id to be used in computation.
 
-* void load_command_args(int argc, char** argv) <br/>
+* **void load_command_args(int argc, char\*\* argv) <br/>**
 	Sets the object properties of darknet using command line arguments in the command format of the original darknet application.
 	
 	See original darknet documentation for detail.
 		
 	Parameters:
-	* int argc <br/>
+	* **int argc <br/>**
 		Number of arguments.
 		
-	* char** argv <br/>
+	* char\*\* argv <br/>**
 		list of arguments in the form of an array of C-style strings.
 
-* void load_command_args(const std::vector<std::string>& args) <br/>
+* **void load_command_args(const std::vector<std::string>& args) <br/>**
 	This is an overloaded method. Instead of using C-style command arguments, this method parses a `std::vector` list of C++ strings for convenience.
 
-* void run() <br/>
+* **void run() <br/>**
 	Runs the darknet application using the object properties as parameters. <br/>
 	Depending on the `operation` property, the behavior of this method may vary. <br/>
 	This method cannot be called more than once.
 
-* void process(cv::Mat& image, process_func_ptr process_func = nullptr) <br/>
+* **void process(cv::Mat& image, process_func_ptr process_func = nullptr) <br/>**
 	If `module` is set to "detector" and `operation` is set to "detect", calling this function will process `image` by detecting objects using darknet's neural network and calling `process_func` with the detected data, including object names, positions and bounding boxes, and confidences (probabilities). <br/>
 	If `module` and `operation` is in other configurations, this method has no effect. <br/>
 	`run` must be called before this method.
 	
 	Parameters:
-	* cv::Mat& image <br/>
+	* **cv::Mat& image <br/>**
 		The OpenCV image to be processed.
 		
-	* process_func_ptr process_func <br/>
+	* **process_func_ptr process_func <br/>**
 		The callback function to be used in processing the data. <br/>
 		Format of the callback function: <br/>
 			void process_func(int num, const char** names, box* boxes, float* probs)
@@ -107,7 +107,7 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 ### Properties:
 * std::string module <br/>
 	The darknet module/option to use. <br/>
-	Corresponds to the first argument in darknet command.
+	Corresponds to the first argument in darknet command. <br/>
 	Valid values:
 	* "detector"
 	
