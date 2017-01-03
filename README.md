@@ -13,7 +13,7 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 	The following steps are performed on this copy, unless stated otherwise.
 
 3. **Remove or rename the main function in the darknet source code. <br/>**
-	There is a main function in the original darknet. In order to use it as a library, this function must be removed or renamed. For example, rename this function to _main instead of main. <br/>
+	There is a main function in the original darknet. In order to use darknet as a library, this function must be removed or renamed. For example, rename this function to _main instead of main. <br/>
 	The function is located in `src/darknet.c`.
 
 4. **Copy the content inside `wrapper` folder to somewhere near the source file. <br/>**
