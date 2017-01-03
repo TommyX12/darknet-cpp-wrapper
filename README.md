@@ -61,7 +61,7 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 	* **int argc <br/>**
 		Number of arguments.
 		
-	* char\*\* argv <br/>**
+	* **char\*\* argv <br/>**
 		list of arguments in the form of an array of C-style strings.
 
 * **void load_command_args(const std::vector<std::string>& args) <br/>**
