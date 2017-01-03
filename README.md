@@ -2,18 +2,18 @@
 A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT project.
 
 # Installation:
-1. Download and make sure you can compile and run darknet yolo.
-	Links:
-		http://pjreddie.com/darknet/yolo/
+1. Download and make sure you can compile and run darknet yolo.<br/>
+	Links:<br/>
+		http://pjreddie.com/darknet/yolo/<br/>
 		https://github.com/pjreddie/darknet
 	
-	Note: OpenCV and GPU(CUDA) must be enabled when compiling.
+	Note: OpenCV and GPU(CUDA) must be enabled when compiling.<br/>
 	
-2. Make a copy of the darknet source code, including the make file.
+2. Make a copy of the darknet source code, including the make file.<br/>
 	The following steps are performed on this copy, unless stated otherwise.
 
-3. Remove or rename the main function in the darknet source code.
-	There is a main function in the original darknet. In order to use it as a library, this function must be removed or renamed. For example, rename this function to _main instead of main.
+3. Remove or rename the main function in the darknet source code.<br/>
+	There is a main function in the original darknet. In order to use it as a library, this function must be removed or renamed. For example, rename this function to _main instead of main.<br/>
 	The function is located in [src/darknet.c].
 
 4. Copy the content inside [wrapper] folder to somewhere near the source file.
