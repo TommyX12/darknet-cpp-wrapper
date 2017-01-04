@@ -1,5 +1,5 @@
 # Darknet C++ Wrapper
-A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT project.
+A small C++ wrapper for detecting objects using pjreddie/darknet detector (yolo v2), for use in UTAT project.
 
 # Installation:
 1. **Download and make sure you can compile and run darknet yolo. <br/>**
