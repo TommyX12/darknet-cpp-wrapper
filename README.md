@@ -48,7 +48,7 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 	Initializes darknet with the given `gpu_id`. <br/>
 	This method cannot be called more than once.
 	
-	Parameters:
+	**Parameters:**
 	* **int gpu_id <br/>**
 		The default GPU id to be used in computation.
 
@@ -57,7 +57,7 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 	
 	See original darknet documentation for detail.
 		
-	Parameters:
+	**Parameters:**
 	* **int argc <br/>**
 		Number of arguments.
 		
@@ -77,7 +77,7 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 	If `module` and `operation` is in other configurations, this method has no effect. <br/>
 	`run` must be called before this method.
 	
-	Parameters:
+	**Parameters:**
 	* **cv::Mat& image <br/>**
 		The OpenCV image to be processed.
 		
@@ -86,7 +86,7 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 		Format of the callback function: <br/>
 			void process_func(int num, const char** names, box* boxes, float* probs)
 		
-		Parameters:
+		**Parameters:**
 		* **int num <br/>**
 			Number of objects detected.
 			
