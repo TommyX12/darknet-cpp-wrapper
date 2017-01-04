@@ -91,10 +91,12 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 			Number of objects detected.
 			
 		* **const char\*\* names <br/>**
-			Names of the objects detected.
+			An array of C-styled strings. Length is `num`. <br/>
+			Contains names of the objects detected.
 		
 		* **box\* boxes <br/>**
-			Bounding boxes of the object detected. <br/>
+			An array of `box`. Length is `num`. <br/>
+			Contains bounding boxes of the object detected. <br/>
 			`box` is a struct with 4 properties:
 			* **x: x coordinate of the center.**
 			* **y: y coordinate of the center.**
@@ -104,7 +106,8 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 			All properties are in the range of 0.0 to 1.0, where 1.0 is the full width/height of the image.
 		
 		* **float* probs <br/>**
-			The confidence/probability of the objects detected.
+			An array of floats. Length is `num`. <br/>
+			Contains the confidence/probability of the objects detected.
 	
 ### Properties:
 * **std::string module <br/>**
