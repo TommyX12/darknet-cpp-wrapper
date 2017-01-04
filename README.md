@@ -31,6 +31,9 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 
 # Reference:
 ## Darknet class
+### Example:
+See `example.cpp` for an example program that reads image from the webcam using OpenCV, detects objects using darknet, and visualizes the detection.
+
 ### Methods:
 * **static Darknet\* get_current() <br/>**
 	Returns the current instance of darknet. <br/>
@@ -164,5 +167,3 @@ A small C++ wrapper for pjreddie/darknet detector (yolo v2), for use in UTAT pro
 * **bool clear <br/>**
 	(Unknown)
 
-### Example:
-See `example.cpp`.
